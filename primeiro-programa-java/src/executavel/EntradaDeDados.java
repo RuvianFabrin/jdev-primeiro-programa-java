@@ -23,8 +23,17 @@ public class EntradaDeDados {
 		System.out.println("Divisão por pessoa: "+divisao);
 		System.out.println("Sobrou: "+resto);*/
 		
-		JOptionPane.showMessageDialog(null, "Divisão por pessoa: "+divisao);
-		JOptionPane.showMessageDialog(null, "Sobrou: "+resto);
+		int respostaDivisao = JOptionPane.showConfirmDialog(null, "Deseja ver o resultado da divisão?");
+		//Sim e ok:0, Não:1, Cancel:2, closed: -1
+		if(respostaDivisao==0) {
+			JOptionPane.showMessageDialog(null, "Divisão por pessoa: "+divisao);
+		}
+		
+		int respostaResto = JOptionPane.showConfirmDialog(null, "Deseja ver quanto sobrou?");
+		if(respostaResto==0) {
+			JOptionPane.showMessageDialog(null, "Sobrou: "+resto);
+		}
+		
 
 	}
 
