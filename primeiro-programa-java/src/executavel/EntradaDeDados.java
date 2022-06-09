@@ -1,6 +1,5 @@
 package executavel;
 
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 public class EntradaDeDados {
