@@ -2,6 +2,7 @@ package executavel;
 
 import javax.swing.JOptionPane;
 
+
 public class CalcularMedia {
 
 	public static void main(String[] args) {
@@ -14,6 +15,7 @@ public class CalcularMedia {
 		double dNota2 = Double.parseDouble(nota2);
 		double dNota3 = Double.parseDouble(nota3);
 		double dNota4 = Double.parseDouble(nota4);
+		
 		
 		double media = (dNota1+dNota2+dNota3+dNota4)/4;
 		//Menor que 50 está reprovado
