@@ -14,10 +14,17 @@ public class InstanciandoObjeto {
 		
 		Aluno aluno3 = new Aluno("José",23);
 		aluno3.setNomeMae("Maria");
+		aluno3.setNota1(20.1);
+		aluno3.setNota2(80.6);
+		aluno3.setNota3(50.9);
+		aluno3.setNota4(70.3);
+		System.out.println("Sua media é: "+aluno3.getMediaNota()+" e você está "+aluno3.getResultado());
 		
 		//new Aluno() é uma instância de objeto
 		
 		//aluno2 é uma variável que faz referência ao objeto Aluno
+		
+		
 	}
 
 }
