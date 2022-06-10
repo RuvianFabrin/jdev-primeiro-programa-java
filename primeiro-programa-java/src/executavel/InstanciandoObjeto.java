@@ -14,6 +14,10 @@ public class InstanciandoObjeto {
 		
 		Aluno aluno3 = new Aluno("José",23);
 		aluno3.setNomeMae("Maria");
+		
+		//new Aluno() é uma instância de objeto
+		
+		//aluno2 é uma variável que faz referência ao objeto Aluno
 	}
 
 }

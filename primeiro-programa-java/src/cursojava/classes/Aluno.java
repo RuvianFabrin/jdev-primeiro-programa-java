@@ -1,6 +1,7 @@
 package cursojava.classes;
 
 public class Aluno {
+	//Atributos do Aluno
 	String nome;
 	int idade;
 	String dataNascimento;
