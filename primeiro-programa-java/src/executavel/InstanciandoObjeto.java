@@ -12,6 +12,8 @@ public class InstanciandoObjeto {
 		Aluno aluno2 = new Aluno("João");
 		aluno2.setIdade(22);
 		
+		//caso você coloque aluno3 = null | dara o erro null pointer excepetion que é muito comum
+		//Ainda mais quando tem um objeto dentro do outro
 		Aluno aluno3 = new Aluno("José",23);
 		aluno3.setNomeMae("Maria");
 		aluno3.setNota1(20.1);
@@ -23,6 +25,9 @@ public class InstanciandoObjeto {
 		//new Aluno() é uma instância de objeto
 		
 		//aluno2 é uma variável que faz referência ao objeto Aluno
+		
+		//no console mostra a linha que deu o erro
+		//E aí faça o debug
 		
 		
 	}
