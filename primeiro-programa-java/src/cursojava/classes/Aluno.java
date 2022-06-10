@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.Objects;
+
 public class Aluno {
 	//Atributos do Aluno
 	private String nome;
@@ -127,6 +129,48 @@ public class Aluno {
 		}
 		return resultado;
 	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(dataMatricula, dataNascimento, idade, media, nome, nomeEscola, nomeMae, nomePai, nota1,
+				nota2, nota3, nota4, numeroCPF, registroGeral, seriematriculado);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(dataMatricula, other.dataMatricula)
+				&& Objects.equals(dataNascimento, other.dataNascimento) && idade == other.idade
+				&& Double.doubleToLongBits(media) == Double.doubleToLongBits(other.media)
+				&& Objects.equals(nome, other.nome) && Objects.equals(nomeEscola, other.nomeEscola)
+				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(nomePai, other.nomePai)
+				&& Double.doubleToLongBits(nota1) == Double.doubleToLongBits(other.nota1)
+				&& Double.doubleToLongBits(nota2) == Double.doubleToLongBits(other.nota2)
+				&& Double.doubleToLongBits(nota3) == Double.doubleToLongBits(other.nota3)
+				&& Double.doubleToLongBits(nota4) == Double.doubleToLongBits(other.nota4)
+				&& Objects.equals(numeroCPF, other.numeroCPF) && Objects.equals(registroGeral, other.registroGeral)
+				&& Objects.equals(seriematriculado, other.seriematriculado);
+	}
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", seriematriculado="
+				+ seriematriculado + ", media=" + media + "]";
+	}
+	
+	//Equals e hashcode se para difernciar e comparar um objeto do outro
+	//Se não faz isso para sobreescrever, o java vai usar a referencia de memória, ou seja, será sempre diferente
+	
+	
+	
+	
+	
 	
 	
 	
