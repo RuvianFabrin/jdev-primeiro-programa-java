@@ -7,6 +7,8 @@ public class Executando {
 		String nome = JOptionPane.showInputDialog("Qual o Nome:");
 		String idade = JOptionPane.showInputDialog("Qual a idade:");
 		
+		
+		
 		Aluno aluno = new Aluno();
 		aluno.setNome(nome);
 		aluno.setIdade(Integer.valueOf(idade));
