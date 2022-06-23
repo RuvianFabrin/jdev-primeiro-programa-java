@@ -27,15 +27,17 @@ public class Aluno {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	private double media;
-	
+		
 	
 	public double getMedia() {
-		return media;
+		double somaNotas = 0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas +=disciplina.getNota();
+		}
+		return somaNotas/disciplinas.size();
 	}
-	public void setMedia(double media) {
-		this.media = media;
-	}
+	
 	//O Java cria esse construtor, mesmo não colocando aqui
 	/*public Aluno(String nomePadrao) {
 		this.nome=nomePadrao;
@@ -108,15 +110,15 @@ public class Aluno {
 	
 	
 	//Método que retorno a média do aluno
-	public double getMediaNota() {
+	/*public double getMediaNota() {
 		this.media = 2;//(this.nota1+this.nota2+this.nota3+this.nota4)/4;
 		return this.media;
-	} 
+	} */
 	
 	public String getResultado() {
 		String resultado = "";
-		if(this.media>=50) {
-			resultado=(this.media>=70)?"Aprovado. ":"Em Recuperação. ";
+		if(this.getMedia()>=50) {
+			resultado=(this.getMedia()>=70)?"Aprovado. ":"Em Recuperação. ";
 		}else {
 			resultado="Reprovado. ";
 		}
@@ -125,7 +127,7 @@ public class Aluno {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(dataMatricula, dataNascimento, idade, media, nome, nomeEscola, nomeMae, nomePai,numeroCPF, registroGeral, seriematriculado);
+		return Objects.hash(dataMatricula, dataNascimento, idade, nome, nomeEscola, nomeMae, nomePai,numeroCPF, registroGeral, seriematriculado);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -138,7 +140,6 @@ public class Aluno {
 		Aluno other = (Aluno) obj;
 		return Objects.equals(dataMatricula, other.dataMatricula)
 				&& Objects.equals(dataNascimento, other.dataNascimento) && idade == other.idade
-				&& Double.doubleToLongBits(media) == Double.doubleToLongBits(other.media)
 				&& Objects.equals(nome, other.nome) && Objects.equals(nomeEscola, other.nomeEscola)
 				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(nomePai, other.nomePai)
 				&& Objects.equals(numeroCPF, other.numeroCPF) && Objects.equals(registroGeral, other.registroGeral)
@@ -149,7 +150,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", seriematriculado="
-				+ seriematriculado + ", media=" + media + "]";
+				+ seriematriculado  + "]";
 	}
 	
 	//Equals e hashcode se para difernciar e comparar um objeto do outro
