@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -14,21 +16,35 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String seriematriculado;
-	private double nota1;
-	private double nota2;
-	private double nota3;
-	private double nota4;
+	
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
+	
+	
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
 	private double media;
 	
-	//O Java cria esse construtor, mesmo não colocando aqui
-	public Aluno(String nomePadrao) {
-		this.nome=nomePadrao;
+	
+	public double getMedia() {
+		return media;
 	}
+	public void setMedia(double media) {
+		this.media = media;
+	}
+	//O Java cria esse construtor, mesmo não colocando aqui
+	/*public Aluno(String nomePadrao) {
+		this.nome=nomePadrao;
+	}*/
 	//Pode se criar mais de um construtor
-	public Aluno(String nomePadrao, int idadePadrao) {
+	/*public Aluno(String nomePadrao, int idadePadrao) {
 		this.nome=nomePadrao;
 		this.idade=idadePadrao;
-	}
+	}*/
 	public String getNome() {
 		return nome;
 	}
@@ -89,34 +105,11 @@ public class Aluno {
 	public void setSeriematriculado(String seriematriculado) {
 		this.seriematriculado = seriematriculado;
 	}
-	public double getNota1() {
-		return nota1;
-	}
-	public void setNota1(double nota1) {
-		this.nota1 = nota1;
-	}
-	public double getNota2() {
-		return nota2;
-	}
-	public void setNota2(double nota2) {
-		this.nota2 = nota2;
-	}
-	public double getNota3() {
-		return nota3;
-	}
-	public void setNota3(double nota3) {
-		this.nota3 = nota3;
-	}
-	public double getNota4() {
-		return nota4;
-	}
-	public void setNota4(double nota4) {
-		this.nota4 = nota4;
-	}
+	
 	
 	//Método que retorno a média do aluno
 	public double getMediaNota() {
-		this.media = (this.nota1+this.nota2+this.nota3+this.nota4)/4;
+		this.media = 2;//(this.nota1+this.nota2+this.nota3+this.nota4)/4;
 		return this.media;
 	} 
 	
@@ -132,8 +125,7 @@ public class Aluno {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(dataMatricula, dataNascimento, idade, media, nome, nomeEscola, nomeMae, nomePai, nota1,
-				nota2, nota3, nota4, numeroCPF, registroGeral, seriematriculado);
+		return Objects.hash(dataMatricula, dataNascimento, idade, media, nome, nomeEscola, nomeMae, nomePai,numeroCPF, registroGeral, seriematriculado);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -149,10 +141,6 @@ public class Aluno {
 				&& Double.doubleToLongBits(media) == Double.doubleToLongBits(other.media)
 				&& Objects.equals(nome, other.nome) && Objects.equals(nomeEscola, other.nomeEscola)
 				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(nomePai, other.nomePai)
-				&& Double.doubleToLongBits(nota1) == Double.doubleToLongBits(other.nota1)
-				&& Double.doubleToLongBits(nota2) == Double.doubleToLongBits(other.nota2)
-				&& Double.doubleToLongBits(nota3) == Double.doubleToLongBits(other.nota3)
-				&& Double.doubleToLongBits(nota4) == Double.doubleToLongBits(other.nota4)
 				&& Objects.equals(numeroCPF, other.numeroCPF) && Objects.equals(registroGeral, other.registroGeral)
 				&& Objects.equals(seriematriculado, other.seriematriculado);
 	}
